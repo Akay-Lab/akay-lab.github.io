@@ -13,7 +13,7 @@ itself in about a minute.
 | Change any text on a page | the matching `.md` or `.html` file: `index.html`, `science.md`, `join.md`, `contact.md` |
 | Add or update a lab member | `_data/people.yml` |
 | Add a blog post | a new file in `_posts/` |
-| Update the publication list | `_data/publications.yml` |
+| Update the publication list | upload a new `publications.bib` (see below) |
 | Change the navigation, email, address | `_config.yml` |
 | Change colours or fonts | the `:root` block at the top of `assets/css/style.css` |
 | Change the three research icons | `_includes/science-band.html` |
@@ -67,37 +67,57 @@ When someone leaves, move their name into the `alumni:` list.
 
 ## Updating the publication list
 
-Three options, in order of least effort:
+Export your library from Zotero as BibTeX, drop the file into the repository as
+`publications.bib`, and the website updates itself. That is the whole job.
 
-**From ORCID.** Turn on the Crossref auto-update in your ORCID account settings so new
-papers land in your ORCID record by themselves. Then run:
+**In Zotero:** right-click the collection holding your papers, choose
+**Export Collection**, set Format to **BibTeX**, and untick "Export Notes" and
+"Export Files". Save it as `publications.bib`.
 
-```bash
-python3 tools/orcid_to_yaml.py
+**On GitHub:** open the repository, click **Add file > Upload files**, drag
+`publications.bib` in, and commit. If a `publications.bib` is already there,
+uploading a file with the same name replaces it.
+
+That commit triggers the "Update publications" Action, which converts the BibTeX
+into `_data/publications.yml` and commits it, which in turn rebuilds the site.
+Two or three minutes end to end. You can watch it happen in the Actions tab.
+
+Some details worth knowing:
+
+- Duplicates are removed automatically. Zotero libraries usually hold both the
+  preprint and the published version of a paper; the converter keeps one entry
+  per DOI.
+- Lab members' names come out in bold. The list of surnames lives at the top of
+  `tools/bib_to_yaml.py` under `LAB_MEMBERS` — add new members there.
+- Accented names, italics in titles and LaTeX escapes are handled, so
+  `M{\"u}ller` becomes Müller and `\textit{C. elegans}` stays italic-free plain
+  text rather than showing the command.
+- Keep a Zotero collection just for lab publications rather than exporting your
+  whole library, otherwise every paper you have ever read ends up on the site.
+
+If a single new paper comes out and you cannot be bothered with Zotero, you can
+also edit `_data/publications.yml` directly on GitHub and add an entry:
+
+```yaml
+- title: "Your new paper"
+  authors: "<strong>J. Williams</strong>, <strong>A. Akay</strong>"
+  venue: "Nucleic Acids Research"
+  year: "2026"
+  doi: "10.1093/nar/xxxxx"
+  url: "https://doi.org/10.1093/nar/xxxxx"
 ```
 
-That rewrites `_data/publications.yml` from your public ORCID record. Check the file
-and commit it.
+The page groups by year and sorts newest first, so where you put it in the file
+does not matter. Be aware that the next `publications.bib` upload overwrites the
+file, so anything added this way should also go into Zotero.
 
-**From Google Scholar.** Open your Scholar profile, select the papers, use
-Export → BibTeX, save the file as `tools/publications.bib`, then:
-
-```bash
-python3 tools/bib_to_yaml.py tools/publications.bib
-```
-
-**By hand.** Open `_data/publications.yml` and add an entry in the shape shown in the
-comments at the top of that file. Wrap lab members' names in `<strong>` tags to bold
-them.
-
-Both scripts need only Python 3, no libraries to install. Neither is magic — check
-the output, because ORCID and Scholar records both contain mistakes.
-
----
+There is also `tools/orcid_to_yaml.py`, which pulls from your public ORCID record
+instead, if you would rather not maintain a Zotero collection. Run it locally with
+`python3 tools/orcid_to_yaml.py`.
 
 ## Putting it live
 
-1. Create the repository as **`akaylab.github.io`** under the `akaylab` account or
+1. Create the repository as **`akay-lab.github.io`** under the `Akay-Lab`
    organisation, and make it public.
 2. Upload everything in this folder to the root of that repository. In GitHub's web
    interface: Add file → Upload files, then drag the contents in. Keep the folder
@@ -108,7 +128,7 @@ the output, because ORCID and Scholar records both contain mistakes.
 
 ### Pointing theakaylab.com at it
 
-The `CNAME` file in this repo already contains `www.theakaylab.com`. At your domain
+The `CNAME` file in this repo contains `www.theakaylab.com`. At your domain
 registrar, set these DNS records:
 
 | Type | Name | Value |
@@ -117,7 +137,7 @@ registrar, set these DNS records:
 | A | `@` | `185.199.109.153` |
 | A | `@` | `185.199.110.153` |
 | A | `@` | `185.199.111.153` |
-| CNAME | `www` | `akaylab.github.io.` |
+| CNAME | `www` | `akay-lab.github.io.` |
 
 Check those IP addresses against GitHub's current
 [Pages documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
@@ -148,7 +168,8 @@ then open `http://localhost:4000`.
 
 ## Things left to do
 
-- `_data/publications.yml` is empty. Run one of the scripts above.
+- `_data/publications.yml` is empty. Export your Zotero collection as
+  `publications.bib` and upload it.
 - Max Brown and Juliet Ibuchim Agu have `Bio to come.` placeholders in
   `_data/people.yml`.
 - Juliet Ibuchim Agu has no photo.
