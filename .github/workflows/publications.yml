@@ -1,1 +1,31 @@
+name: Update publications
 
+"on": [push, workflow_dispatch]
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Convert publications.bib to publications.yml
+        run: python3 tools/bib_to_yaml.py publications.bib
+
+      - name: Commit the result if it changed
+        run: |
+          git config user.name "publications bot"
+          git config user.email "actions@github.com"
+          git add _data/publications.yml
+          if git diff --staged --quiet; then
+            echo "Nothing changed."
+          else
+            git commit -m "Update publications from publications.bib"
+            git push
+          fi
