@@ -1,0 +1,13 @@
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}<span>{{ site.tagline }}</span></a>
+    <nav aria-label="Main">
+      <ul>
+        {%- for item in site.nav %}
+        <li><a href="{{ item.url | relative_url }}"
+          {%- if page.url contains item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

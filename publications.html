@@ -1,0 +1,32 @@
+---
+layout: wide
+title: Publications
+lede: Lab members are shown in bold. Preprints are included.
+---
+
+{%- if site.data.publications == nil or site.data.publications.size == 0 %}
+<div class="pubnote">
+  <p><strong>This list is empty.</strong> Add papers to
+  <code>_data/publications.yml</code>, or run
+  <code>python3 tools/orcid_to_yaml.py</code> to fill it from ORCID.
+  See the README for both routes.</p>
+</div>
+{%- endif %}
+
+{%- assign by_year = site.data.publications | group_by: "year" | sort: "name" | reverse %}
+{%- for group in by_year %}
+<h2 class="pubyear">{{ group.name }}</h2>
+{%- assign items = group.items %}
+{%- for pub in items %}
+<p class="pub">
+  <span class="title">
+    {%- if pub.url %}<a href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+  </span><br>
+  <span class="authors">{{ pub.authors }}</span><br>
+  <span class="venue">{{ pub.venue }}</span>{% if pub.volume %}, {{ pub.volume }}{% endif %}
+  {%- if pub.doi %}<br><span class="meta"><a href="https://doi.org/{{ pub.doi }}">doi:{{ pub.doi }}</a></span>{% endif %}
+</p>
+{%- endfor %}
+{%- endfor %}
+
+<p style="margin-top:3rem"><a class="underlined" href="{{ site.scholar }}">Full list on Google Scholar</a></p>

@@ -1,0 +1,53 @@
+# ---------------------------------------------------------------
+# Site-wide settings. Edit the values, keep the key names.
+# After any change here, GitHub rebuilds the site in ~1 minute.
+# ---------------------------------------------------------------
+title: Akay Lab
+tagline: RNA (epi)genetics
+description: >-
+  The RNA (epi)genetics laboratory of Dr Alper Akay at the University of
+  East Anglia, Norwich. We study snRNA modifications, mRNA splicing, and
+  the regulation of gene expression by dietary metabolites.
+url: "https://www.theakaylab.com"
+baseurl: ""
+
+email: a.akay@uea.ac.uk
+institution: University of East Anglia, Norwich
+address:
+  - School of Biological Sciences
+  - University of East Anglia
+  - Norwich NR4 7TJ, United Kingdom
+
+# Change these if a handle or profile moves.
+scholar: "https://scholar.google.com/citations?user=mSkbAAwAAAAJ&hl=en"
+orcid: "0000-0001-6825-4443"
+bluesky: ""
+twitter: "alperakay_"
+
+# The order of the top navigation. Remove a line to hide a page.
+nav:
+  - title: Science
+    url: /science/
+  - title: People
+    url: /people/
+  - title: Publications
+    url: /publications/
+  - title: Blog
+    url: /blog/
+  - title: Join us
+    url: /join/
+  - title: Contact
+    url: /contact/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+defaults:
+  - scope: { path: "", type: "posts" }
+    values: { layout: "post" }
+
+permalink: /blog/:year/:month/:title/
+timezone: Europe/London
+exclude: [README.md, tools, Gemfile, Gemfile.lock, vendor]

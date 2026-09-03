@@ -1,0 +1,22 @@
+# ---------------------------------------------------------------
+# Publications. Newest first; the page groups them by year for you.
+#
+# Fill this in either way:
+#   a) export BibTeX from Google Scholar and run
+#      python3 tools/bib_to_yaml.py tools/publications.bib
+#   b) pull straight from ORCID with
+#      python3 tools/orcid_to_yaml.py
+#   c) or just type entries by hand, using this shape:
+#
+# - title: "Paper title without a full stop"
+#   authors: "<strong>A. Akay</strong>, E. Miska"
+#   venue: "Nucleic Acids Research"
+#   volume: "52:gkae447"
+#   year: "2024"
+#   doi: "10.1093/nar/gkae447"
+#   url: "https://doi.org/10.1093/nar/gkae447"
+#
+# Wrap lab members' names in <strong> tags to show them in bold.
+# ---------------------------------------------------------------
+
+[]

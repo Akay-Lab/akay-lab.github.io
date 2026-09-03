@@ -1,0 +1,144 @@
+# ---------------------------------------------------------------
+# Lab members. To add someone, copy a block and change the values.
+# `photo` is a filename in assets/img/people/ — leave it blank and a
+# placeholder is used instead. `bio` can be as long or short as you like;
+# the "|" lets you write several paragraphs, indented underneath.
+# ---------------------------------------------------------------
+
+current:
+  - name: Dr Alper Akay
+    role: UKRI Future Leaders Fellow, Principal Investigator
+    photo: alper-akay.jpg
+    email: a.akay@uea.ac.uk
+    scholar: "https://scholar.google.com/citations?user=mSkbAAwAAAAJ&hl=en"
+    orcid: "0000-0001-6825-4443"
+    bio: |
+      I studied Biology at the Middle East Technical University in Türkiye and took
+      an MSc in Molecular Biology at the University of Amsterdam. I then moved to
+      Scotland for a PhD on RNA-binding proteins and non-coding RNAs in
+      *C. elegans* with Anton Gartner. During my postdoc with Eric Miska at the
+      Gurdon Institute in Cambridge I worked on small silencing RNAs, long
+      non-coding RNAs and RNA modifications. I am interested in how RNA regulates
+      essential processes in the cell, and how it works as a signalling molecule
+      during development.
+    history:
+      - 2012–2019 — Postdoctoral researcher, Gurdon Institute, University of Cambridge
+      - 2007–2012 — PhD, University of Dundee, Anton Gartner's lab
+      - 2005–2007 — MSc, University of Amsterdam
+      - 2000–2005 — BSc, Middle East Technical University
+
+  - name: Dr Tim Pearson
+    role: Senior Research Associate
+    photo: tim-pearson.jpg
+    bio: |
+      I studied physiology at Southampton and neurobiology at Durham. My postdoctoral
+      work has covered CNS oxygen deprivation and adenosine signalling in stroke
+      models, obstetric research into premature labour, and skeletal muscle research
+      on sarcopenia and ageing — the role of reactive oxygen species, amino acid
+      transport and satellite cells.
+
+  - name: Katarzyna Hencel
+    role: Senior Research Associate
+    photo: katarzyna-hencel.jpg
+    bio: |
+      I studied at the University of Dundee, receiving a BSc in microbiology. During
+      my studies I worked in Dr Sarah Coulthurst's lab on the type VI secretion system
+      in *Serratia marcescens*. My PhD investigated how metabolism regulates RNA
+      modifications in *C. elegans*.
+
+  - name: Aykut Shen
+    role: PhD student, BBSRC NRPDTP
+    photo: aykut-shen.jpg
+    bio: |
+      I completed a BSc in Biological Sciences at the University of Dundee, focusing on
+      bioinformatics. Through the James Black student internship in the Holden lab at
+      the James Hutton Institute I contributed to a project on vertical farming. My
+      honours project in the Simpson lab identified and characterised non-coding RNAs
+      in *Arabidopsis thaliana*. In my PhD I use RNA sequencing to study RNA
+      modifications and splicing.
+
+  - name: John Williams
+    role: PhD student, BBSRC NRPDTP
+    photo: john-williams.jpg
+    bio: |
+      I completed my undergraduate degree at the University of East Anglia, with a final
+      year project at the Earlham Institute. I started my BBSRC-funded NRPDTP PhD in
+      October 2023, studying how modified RNAs and RNA-modifying enzymes are deposited
+      into oocytes.
+
+  - name: Max Brown
+    role: PhD student, Big C Cancer Charity
+    photo: max-brown.jpg
+    bio: |
+      Bio to come.
+
+  - name: Ekemini Okon
+    role: PhD student, BBSRC MMBDTP
+    photo: ekemini-okon.jpg
+    bio: |
+      I completed my undergraduate studies at Landmark University, Nigeria, and earned
+      two master's degrees from the University of Stirling and Ghent University through
+      the Commonwealth and Erasmus Mundus scholarship programmes. I began my MMBDTP
+      funded PhD in October 2025. My research focuses on bacterial metabolites that can
+      alleviate vitamin B12 deficiency, using *Caenorhabditis elegans* as a model.
+
+  - name: Juliet Ibuchim Agu
+    role: MSc by Research student
+    photo:
+    bio: |
+      Bio to come.
+
+# Former members, most recent first.
+alumni:
+  - Dr Roberta Skukan
+  - Dr Aduragbemi Adesina
+  - Samantha D'Asaro
+  - Gulcin Baykal — Erasmus student
+
+# Taught MSc students, newest year first.
+masters:
+  - year: 2026
+    names:
+      - Maheswari Kongara
+      - Dhruv Suthar
+      - Vismay Joshi
+      - Nirmala Devi Rajendra Chauhan
+      - Hema Harshitha Pericharla
+      - Rahil Sunil Krishna
+      - Yaziya Iqrabanu Mohammad Asif Shaikh
+      - Sabeeka Fatima Asif
+      - Krupa Madhava
+  - year: 2025
+    names:
+      - Eman Almototah
+  - year: 2024
+    names:
+      - Matthew Hammond
+
+# Undergraduate research project students, newest year first.
+projects:
+  - year: 2026
+    names:
+      - Cansin Oztan — gene expression and B12
+      - Jan Prokop — gene expression and B12
+  - year: 2025
+    names:
+      - Connor Mccausland — gene expression and B12
+      - William Strevens — gene expression and B12
+      - Alexander Williams — gene expression and B12
+      - Issy Collins — nanopore sequencing
+  - year: 2024
+    names:
+      - Isabel Potteril — RNA splicing
+      - Haider Bashir — RNA splicing
+      - Paddy McKenna — mutagenesis
+  - year: 2023
+    names:
+      - Jamie Bartram — piRNA pathway
+      - Amy Alford — dauer effects on phenotypes
+      - Helen Ireland — vitamin B12
+      - Maria Pinar Saenz de Miera — m6A detection
+  - year: 2022
+    names:
+      - Aaron Stokes — bacterial mutagenesis
+      - Benjamin Garnham — detection of m6A modification on RNA

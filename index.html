@@ -1,0 +1,62 @@
+---
+layout: default
+title: Home
+---
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>We follow a single methyl group from the diet, onto RNA, and into a
+        spliced <em>message</em>.</h1>
+      <p>Our lab works on chemical modifications of snRNA, the splicing of mRNA that
+        those modifications steer, and how the metabolites in an animal's diet control
+        the whole system.</p>
+      <p class="place">RNA (epi)genetics laboratory, {{ site.institution }}.
+        Established 2020.</p>
+    </div>
+    <img src="{{ '/assets/img/logo.png' | relative_url }}"
+         alt="Akay Lab logo: a nematode whose body is an RNA strand carrying methyl marks.">
+  </div>
+</div>
+
+{% include science-band.html %}
+{% include organisms.html %}
+
+<section class="news-sec">
+  <div class="wrap">
+    <h2>From the lab</h2>
+    <ul class="news">
+      {%- for post in site.posts limit: 5 %}
+      <li>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+        <div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          {%- if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+    <a class="underlined" href="{{ '/blog/' | relative_url }}">All posts</a>
+  </div>
+</section>
+
+<section class="band-gold">
+  <div class="wrap">
+    <div>
+      <h2>Science is fun. We keep it that way.</h2>
+      <ul>
+        <li>Research that is robust and reproducible.</li>
+        <li>Open-access papers, and data shared as early as we can.</li>
+        <li>Honesty, respect, and helping each other.</li>
+        <li>We follow what is interesting and we aren't afraid to fail.</li>
+      </ul>
+    </div>
+    <div>
+      <p>We welcome scientists and students of all genders and nationalities, and anyone
+        who needs extra support to follow their scientific curiosity.</p>
+      <p>No funded PhD positions are open right now, but we take students with funding
+        from their own government or another organisation, including the China Scholarship
+        Council and Commonwealth schemes.</p>
+      <a class="cta" href="{{ '/join/' | relative_url }}">How to join</a>
+    </div>
+  </div>
+</section>

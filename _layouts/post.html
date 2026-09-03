@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="page">
+  <div class="wrap">
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%-d %B %Y" }}</p>
+    <div class="prose">{{ content }}</div>
+    <div class="post-nav">
+      <span>{% if page.previous %}<a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>{% endif %}</span>
+      <span>{% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>{% endif %}</span>
+    </div>
+    <p><a class="underlined" href="{{ '/blog/' | relative_url }}">All posts</a></p>
+  </div>
+</div>
