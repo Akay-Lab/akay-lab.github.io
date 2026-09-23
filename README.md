@@ -178,5 +178,5 @@ then open `http://localhost:4000`.
 - The blog posts migrated from WordPress were mostly image posts with little text, so
   they are now one-liners. The originals are in your WordPress export if you want to
   restore anything.
-- `assets/img/lab-group.jpg` is the 2023 dinner photo, used at the top of the People
-  page. Swap it for a newer group photo when you have one.
+- `assets/img/lab-group.jpg` is the 2026 group photo, used at the top of the People
+  page.
