@@ -37,26 +37,6 @@ current:
       on sarcopenia and ageing — the role of reactive oxygen species, amino acid
       transport and satellite cells.
 
-  - name: Katarzyna Hencel
-    role: Senior Research Associate
-    photo: katarzyna-hencel.jpg
-    bio: |
-      I studied at the University of Dundee, receiving a BSc in microbiology. During
-      my studies I worked in Dr Sarah Coulthurst's lab on the type VI secretion system
-      in *Serratia marcescens*. My PhD investigated how metabolism regulates RNA
-      modifications in *C. elegans*.
-
-  - name: Aykut Shen
-    role: PhD student, BBSRC NRPDTP
-    photo: aykut-shen.jpg
-    bio: |
-      I completed a BSc in Biological Sciences at the University of Dundee, focusing on
-      bioinformatics. Through the James Black student internship in the Holden lab at
-      the James Hutton Institute I contributed to a project on vertical farming. My
-      honours project in the Simpson lab identified and characterised non-coding RNAs
-      in *Arabidopsis thaliana*. In my PhD I use RNA sequencing to study RNA
-      modifications and splicing.
-
   - name: John Williams
     role: PhD student, BBSRC NRPDTP
     photo: john-williams.jpg
@@ -89,7 +69,16 @@ current:
       Bio to come.
 
 # Former members, most recent first.
+# Either just a name on one line, or a block like the ones below to show a
+# photo, their role in the lab and where they are now (all optional).
 alumni:
+  - name: Dr Katarzyna Hencel
+    role: PhD student and postdoc in the Akay Lab, 2020–2026
+    now: Postdoctoral Fellow, Walhout Lab, UMass Chan Medical School
+    photo: katarzyna-hencel.jpg
+  - name: Dr Aykut Shen
+    role: PhD student in the Akay Lab, 2020–2025
+    photo: aykut-shen.jpg
   - Dr Roberta Skukan
   - Dr Aduragbemi Adesina
   - Samantha D'Asaro

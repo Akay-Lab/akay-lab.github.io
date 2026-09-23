@@ -37,8 +37,24 @@ lede: The lab, past and present.
 
 <div class="roster">
   <h2>Alumni</h2>
+  <div class="alumni-cards">
+    {%- for a in site.data.people.alumni %}{% if a.name %}
+    <div class="alum">
+      {%- if a.photo %}
+      <img src="{{ '/assets/img/people/' | append: a.photo | relative_url }}" alt="{{ a.name }}">
+      {%- else %}
+      <div class="nophoto" aria-hidden="true">{{ a.name | slice: 0 }}</div>
+      {%- endif %}
+      <div>
+        <h3>{{ a.name }}</h3>
+        {%- if a.role %}<p class="role">{{ a.role }}</p>{% endif %}
+        {%- if a.now %}<p class="now">Now: {{ a.now }}</p>{% endif %}
+      </div>
+    </div>
+    {%- endif %}{% endfor %}
+  </div>
   <ul>
-    {%- for a in site.data.people.alumni %}<li>{{ a }}</li>{% endfor %}
+    {%- for a in site.data.people.alumni %}{% unless a.name %}<li>{{ a }}</li>{% endunless %}{% endfor %}
   </ul>
 
   <h2 style="margin-top:2.5rem">Master's students</h2>
