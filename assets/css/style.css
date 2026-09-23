@@ -1,0 +1,194 @@
+/* ---------------------------------------------------------------
+   Akay Lab — stylesheet
+   Palette taken from the lab logo: charcoal, gold, red.
+   Change the values in :root below to restyle the whole site.
+   --------------------------------------------------------------- */
+
+:root{
+  --ink:#242424;
+  --ink-deep:#141414;
+  --gold:#FFC20A;
+  --gold-deep:#DFA400;
+  --red:#E1261C;
+  --paper:#FFFFFF;
+  --tint:#F6F4EF;
+  --line:#DCD8CF;
+  --soft:#5C5A55;
+  --dim:#C9C6BE;
+  --display:"Space Grotesk",system-ui,-apple-system,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:1.0625rem;line-height:1.6;
+}
+img{max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.02em}
+
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.75rem}
+.narrow{max-width:44rem}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;background:var(--gold);color:var(--ink-deep);
+  padding:.5rem .9rem;z-index:10;font-family:var(--display)}
+
+/* ---------- masthead ---------- */
+.masthead{border-bottom:2px solid var(--ink)}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;
+  gap:1.5rem;padding-top:1rem;padding-bottom:1rem;flex-wrap:wrap}
+.wordmark{font-family:var(--display);font-weight:700;font-size:1.15rem;
+  text-decoration:none;line-height:1.15}
+.wordmark span{display:block;font-family:var(--body);font-weight:400;
+  font-size:.8rem;color:var(--soft);letter-spacing:0}
+.masthead nav ul{display:flex;gap:1.35rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.masthead nav a{font-family:var(--display);font-weight:500;font-size:.95rem;
+  text-decoration:none;padding-bottom:2px;border-bottom:2px solid transparent}
+.masthead nav a:hover{border-bottom-color:var(--gold)}
+.masthead nav a[aria-current="page"]{border-bottom-color:var(--red)}
+
+/* ---------- home hero ---------- */
+.hero{padding:4rem 0 3.5rem}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+  gap:3.5rem;align-items:center}
+.hero h1{font-size:clamp(2.1rem,5.2vw,3.5rem);line-height:1.06;margin:0 0 1.5rem;max-width:26ch}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{margin:0;max-width:46ch;font-size:1.1rem}
+.hero .place{margin-top:1.5rem;font-size:.95rem;color:var(--soft);max-width:42ch}
+.hero img{width:100%;max-width:20rem;display:block;margin:0 auto}
+@media (max-width:56rem){
+  .hero .wrap{grid-template-columns:1fr;gap:2.25rem}
+  .hero img{max-width:14rem;margin:0}
+}
+
+/* ---------- charcoal science band ---------- */
+.questions{background:var(--ink-deep);color:var(--paper);padding:3.75rem 0 4rem}
+.questions h2{font-size:1.5rem;margin:0 0 2.5rem;color:var(--gold)}
+.qgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.75rem}
+@media (max-width:52rem){.qgrid{grid-template-columns:1fr;gap:2.5rem}}
+.qgrid svg{width:100%;max-width:9rem;display:block;margin:0 0 1.25rem}
+.qgrid h3{font-size:1.15rem;margin:0 0 .5rem}
+.qgrid p{margin:0;color:var(--dim);font-size:.99rem}
+.qgrid a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-deep)}
+
+/* ---------- organism strip ---------- */
+.organisms{background:var(--tint);padding:3rem 0;border-bottom:1px solid var(--line)}
+.organisms h2{font-size:1.15rem;margin:0 0 1.75rem;font-weight:500}
+.orow{display:flex;gap:2.5rem;flex-wrap:wrap;align-items:flex-end;margin:0;padding:0;list-style:none}
+.orow li{flex:1 1 8rem;min-width:7rem}
+.orow svg{width:100%;max-width:7.5rem;display:block;margin-bottom:.4rem}
+.orow span{font-family:var(--display);font-weight:500;font-size:.92rem}
+.orow i{display:block;font-style:italic;font-size:.85rem;color:var(--soft)}
+
+/* ---------- news list ---------- */
+.news-sec{padding:3.5rem 0}
+.news-sec h2{font-size:1.5rem;margin:0 0 1.75rem}
+.news{list-style:none;margin:0;padding:0}
+.news li{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1.5rem;
+  padding:1.05rem 0;border-top:1px solid var(--line)}
+.news li:last-child{border-bottom:1px solid var(--line)}
+.news time{font-family:var(--display);font-weight:500;font-size:.9rem;color:var(--soft);
+  font-variant-numeric:tabular-nums;padding-top:.15rem}
+.news h3{font-size:1.02rem;margin:0;font-weight:500}
+.news h3 a{text-decoration:none;border-bottom:1px solid var(--line)}
+.news h3 a:hover{border-bottom-color:var(--red)}
+.news p{margin:.2rem 0 0;color:var(--soft);font-size:.95rem;max-width:58ch}
+@media (max-width:40rem){.news li{grid-template-columns:1fr;gap:.1rem}}
+.underlined{display:inline-block;margin-top:1.5rem;font-family:var(--display);
+  font-weight:500;font-size:.95rem;border-bottom:2px solid var(--gold);
+  text-decoration:none;padding-bottom:1px}
+.underlined:hover{border-bottom-color:var(--red)}
+
+/* ---------- gold band ---------- */
+.band-gold{background:var(--gold);color:var(--ink-deep);padding:3.5rem 0}
+.band-gold .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem}
+@media (max-width:52rem){.band-gold .wrap{grid-template-columns:1fr;gap:1.75rem}}
+.band-gold h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 1rem;line-height:1.08;max-width:20ch}
+.band-gold ul{list-style:none;margin:0;padding:0}
+.band-gold li{padding-left:1.5rem;position:relative;margin-bottom:.6rem}
+.band-gold li::before{content:"";position:absolute;left:0;top:.6em;width:.55rem;height:.55rem;
+  border-radius:50%;background:var(--red)}
+.band-gold p{margin:0 0 1rem;max-width:46ch}
+.cta{display:inline-block;background:var(--ink-deep);color:var(--gold);
+  font-family:var(--display);font-weight:500;padding:.65rem 1.15rem;text-decoration:none}
+.cta:hover{background:var(--red);color:#fff}
+
+/* ---------- inner pages ---------- */
+.page{padding:3.25rem 0 4rem}
+.page h1{font-size:clamp(2rem,4.6vw,2.9rem);line-height:1.08;margin:0 0 1.5rem}
+.page .lede{font-size:1.15rem;max-width:44ch;margin:0 0 2.5rem}
+.prose{max-width:38rem}
+.prose h2{font-size:1.35rem;margin:2.5rem 0 .6rem}
+.prose h3{font-size:1.1rem;margin:2rem 0 .4rem}
+.prose p{margin:0 0 1rem}
+.prose ul,.prose ol{margin:0 0 1.25rem;padding-left:1.3rem}
+.prose li{margin-bottom:.4rem}
+.prose a{text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:.15em}
+.prose a:hover{text-decoration-color:var(--red)}
+.prose blockquote{margin:1.5rem 0;padding-left:1.25rem;border-left:3px solid var(--gold);
+  color:var(--soft)}
+.prose img{margin:1.5rem 0}
+.prose code{background:var(--tint);padding:.1em .35em;font-size:.92em}
+
+/* ---------- people ---------- */
+.person{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:2rem;
+  padding:2.25rem 0;border-top:1px solid var(--line)}
+.person:first-of-type{border-top:none;padding-top:.5rem}
+.person img{width:11rem;height:11rem;object-fit:cover;display:block}
+.person .nophoto{width:11rem;height:11rem;background:var(--tint);
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:2.5rem;color:var(--gold-deep)}
+.person h2{font-size:1.3rem;margin:0}
+.person .role{font-family:var(--display);font-weight:500;font-size:.95rem;
+  color:var(--soft);margin:.15rem 0 .85rem}
+.person p{margin:0 0 .8rem;max-width:60ch}
+.person .links{font-family:var(--display);font-size:.9rem}
+.person .links a{margin-right:1rem;text-decoration:none;border-bottom:1px solid var(--gold)}
+.person .history{list-style:none;margin:.6rem 0 0;padding:0;font-size:.93rem;color:var(--soft)}
+.person .history li{margin-bottom:.2rem}
+@media (max-width:44rem){
+  .person{grid-template-columns:1fr;gap:1rem}
+  .person img,.person .nophoto{width:9rem;height:9rem}
+}
+.roster{border-top:1px solid var(--line);padding-top:2rem;margin-top:2.5rem}
+.roster h2{font-size:1.35rem;margin:0 0 1rem}
+.roster h3{font-family:var(--display);font-weight:500;font-size:1rem;margin:1.5rem 0 .4rem}
+.roster ul{list-style:none;margin:0;padding:0;columns:2;column-gap:2.5rem}
+.roster li{margin-bottom:.3rem;break-inside:avoid}
+@media (max-width:40rem){.roster ul{columns:1}}
+
+/* ---------- publications ---------- */
+.pubyear{font-family:var(--display);font-weight:700;font-size:1.6rem;
+  margin:2.5rem 0 1rem;padding-bottom:.3rem;border-bottom:2px solid var(--gold)}
+.pub{margin:0 0 1.4rem;max-width:44rem}
+.pub .title{font-weight:600}
+.pub .title a{text-decoration-color:var(--gold);text-decoration-thickness:2px}
+.pub .authors{color:var(--ink)}
+.pub .authors .us{font-weight:600}
+.pub .venue{font-style:italic;color:var(--soft)}
+.pub .meta{font-family:var(--display);font-size:.85rem;color:var(--soft)}
+.pub .meta a{text-decoration:none;border-bottom:1px solid var(--line)}
+.pubnote{background:var(--tint);padding:1.25rem 1.5rem;margin:0 0 1rem;max-width:44rem}
+
+/* ---------- post ---------- */
+.post-meta{font-family:var(--display);font-weight:500;font-size:.92rem;
+  color:var(--soft);margin:0 0 2rem}
+.post-nav{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+  margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
+  font-family:var(--display);font-size:.95rem}
+.post-nav a{text-decoration:none;border-bottom:1px solid var(--gold)}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink-deep);color:var(--dim);padding:3rem 0 3.5rem;font-size:.95rem}
+footer .cols{display:flex;gap:3.5rem;flex-wrap:wrap}
+footer strong{color:var(--paper);font-family:var(--display);font-weight:500;
+  display:block;margin-bottom:.3rem}
+footer a{color:var(--gold);text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .funders{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #333;
+  font-size:.85rem;color:#8B8880;max-width:52rem}

@@ -1,0 +1,59 @@
+---
+layout: wide
+title: People
+lede: The lab, past and present.
+---
+
+<img src="{{ '/assets/img/lab-group.jpg' | relative_url }}" alt="Members of the Akay Lab" style="margin-bottom:2.5rem">
+
+{%- for p in site.data.people.current %}
+<article class="person">
+  <div>
+    {%- if p.photo %}
+    <img src="{{ '/assets/img/people/' | append: p.photo | relative_url }}" alt="{{ p.name }}">
+    {%- else %}
+    <div class="nophoto" aria-hidden="true">{{ p.name | slice: 0 }}</div>
+    {%- endif %}
+  </div>
+  <div>
+    <h2>{{ p.name }}</h2>
+    <p class="role">{{ p.role }}</p>
+    {{ p.bio | markdownify }}
+    {%- if p.history %}
+    <ul class="history">
+      {%- for h in p.history %}<li>{{ h }}</li>{% endfor %}
+    </ul>
+    {%- endif %}
+    {%- if p.email or p.scholar or p.orcid %}
+    <p class="links">
+      {%- if p.email %}<a href="mailto:{{ p.email }}">Email</a>{% endif %}
+      {%- if p.scholar %}<a href="{{ p.scholar }}">Google Scholar</a>{% endif %}
+      {%- if p.orcid %}<a href="https://orcid.org/{{ p.orcid }}">ORCID</a>{% endif %}
+    </p>
+    {%- endif %}
+  </div>
+</article>
+{%- endfor %}
+
+<div class="roster">
+  <h2>Alumni</h2>
+  <ul>
+    {%- for a in site.data.people.alumni %}<li>{{ a }}</li>{% endfor %}
+  </ul>
+
+  <h2 style="margin-top:2.5rem">Master's students</h2>
+  {%- for group in site.data.people.masters %}
+  <h3>{{ group.year }}</h3>
+  <ul>
+    {%- for n in group.names %}<li>{{ n }}</li>{% endfor %}
+  </ul>
+  {%- endfor %}
+
+  <h2 style="margin-top:2.5rem">Research project students</h2>
+  {%- for group in site.data.people.projects %}
+  <h3>{{ group.year }}</h3>
+  <ul>
+    {%- for n in group.names %}<li>{{ n }}</li>{% endfor %}
+  </ul>
+  {%- endfor %}
+</div>

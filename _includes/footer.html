@@ -1,0 +1,24 @@
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <strong>Dr Alper Akay</strong>
+        UKRI Future Leaders Fellow<br>
+        Head of the RNA (epi)genetics Laboratory
+      </div>
+      <div>
+        <strong>Find us</strong>
+        {% for line in site.address %}{{ line }}<br>{% endfor %}
+      </div>
+      <div>
+        <strong>Get in touch</strong>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+        <a href="{{ site.scholar }}">Google Scholar</a><br>
+        <a href="https://orcid.org/{{ site.orcid }}">ORCID {{ site.orcid }}</a>
+      </div>
+    </div>
+    <p class="funders">Funded by UKRI, BBSRC, the Medical Research Council and the Big C
+      Cancer Charity, with studentships through the NRP and MMB doctoral training
+      partnerships.</p>
+  </div>
+</footer>
